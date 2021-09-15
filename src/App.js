@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+import Hello from "./components/Hello";
+import Input from "./components/Input";
 
 function App() {
+  // dispatchAction() a function that we call to update the state 
+  const [name, setName] = useState("Blanche");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <main>
+    <Hello name={name}/>
+
+    <Input handler={setName}/>
+  </main>);
 }
 
 export default App;
